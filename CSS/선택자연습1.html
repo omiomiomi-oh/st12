@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 연습1</title>
+  <style>
+    /* 태그/선택자 {속성 : 값;} */
+    h2{
+      color: #86F;      
+    }
+    .title{
+      color: #f68;
+    }
+    div.title{
+      color: #8f6;    
+    }
+    #section1{
+      border: 1px, solid #000;
+    }
+    .box p{
+      color: red;
+    }
+    section > .title{
+      color: #cc8;
+    }
+    /* section > p{
+      color: #cc0;
+    } */
+  </style>
+</head>
+<body>
+
+  <div id="wrap">
+    <!-- header+div.container+footer -->
+    <header></header>
+    <div class="container">
+      <!-- section#section$*3 -->
+      <!-- section#section$*3>p.title+div.box>>h2+p*2>lorem10 -->
+      <section id="section1">
+        <div class="title">section1</div>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, quidem?</p>
+          <p>Ut qui quidem amet repudiandae quo. Nesciunt accusantium beatae asperiores!</p>
+        </div>
+      </section>
+      <section id="section2">
+        <p class="title">section2</p>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et.</p>
+          <p>Saepe consequuntur, accusantium enim perspiciatis quaerat voluptate placeat qui tempore?</p>
+        </div>
+        <p>section2 마지막 자식</p>
+      </section>
+      <section id="section3">
+        <p class="title">section3</p>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, ullam.</p>
+          <p>Deleniti obcaecati voluptatem optio eveniet excepturi eius at explicabo tenetur?</p>
+        </div>
+      </section>
+
+      </div>
+    <!-- //.container -->
+    <footer></footer>
+  </div>
+    <!-- //#wrap -->
+</body> 
+</html>

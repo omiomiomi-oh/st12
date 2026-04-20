@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 우선순위</title>
+  <style>
+    .box p{color: dodgerblue;} 
+    /* class 10점 + 태그 1점 */
+    .title{color: #0f0;}
+    p{color: #0ff;}
+    div{color: #f00;}
+    div{color: #00f;}
+    p{color: black;}
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vitae voluptas, atque eum cum reiciendis quos dolores similique excepturi sed dolore autem blanditiis numquam rem qui repellat inventore odio unde.</p>
+  <div class="box">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, veniam!</p>
+    <p class="title" style="color: #86f;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nam?</p>
+  </div>
+  
+</body>
+</html>
