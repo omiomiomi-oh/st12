@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>너비 높이 지정</title>
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    .box{
+      background-color: #ccc;
+      margin: 50px 0;
+    }
+    .box{
+      /* 내용에 상관 없이 너비, 높이 고정 가능 -> 절대 단위 사용 ex. px */
+      /* width: 300px; */
+      /* height: 100px;  -> 내용보다 낮아서 내용 넘처남*/
+      /* 너비 높이 고정하지 않고 최소/최대 높이 지정 */
+      min-width: 300px;
+      max-width: 1000px;
+      width: 80%;
+      /* width : 생략하면 기본값이 auto, X% = 너비를 body size의 X%로 지정 */
+
+      min-height: 50px;
+      max-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- .box.box$*4>{box$} -->
+  <div class="box box1">box1</div>
+  <div class="box box2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam illum omnis eaque iusto facere neque laboriosam! Vel odit natus ratione facilis alias. Doloremque dolore facere odit distinctio hic ipsa error inventore. Repellat eius sapiente at, corporis culpa corrupti dolores sunt?</div>
+  <div class="box box3">box3</div>
+  <div class="box box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ex cumque molestiae modi iste est animi minus quibusdam ratione et!</div>
+</body>
+</html>
