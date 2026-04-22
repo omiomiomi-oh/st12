@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{
+      margin: 0 50px;
+    }
+    .box{
+      background-color: #ccc;
+      width: 300px;
+      height: 150px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">연습</div>
+  <!-- .box.box$*4>lorem15 -->
+  <div class="overflow-exam">
+    <h1>자식의 크기가 부모의 크기보다 클 때</h1>
+    <div class="box box1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dicta, nulla itaque sit pariatur illo!</div>
+    <div class="box box2">Debitis eum est, consequuntur ipsum maxime repudiandae eveniet odit accusantium neque voluptates alias quas. Officiis.</div>
+    <div class="box box3">Dolorum quibusdam debitis quidem alias et unde vitae sit fugiat, repellat eius. Vitae, quia error.</div>
+    <div class="box box4">Voluptatum, rem. Iusto modi corrupti dolorem, eius illo ad. Omnis fugiat reiciendis architecto nobis minus!</div>
+  </div>
+  <style>
+    .overflow-exam > .box{
+      width: 300px;
+      height: 100px;
+      /* height: auto; */
+      border: 1px solid #000;
+      margin: 50px 0 10px 0;
+    }
+    .box1{
+      /* overflow: visible;  기본값 */
+      overflow: auto;
+    }
+    .box2{
+      overflow: scroll;
+    }
+    .box3{
+      overflow: visible;
+    }
+    .box4{
+      /* 부모 요소보다 넘쳐나는 부분은 보이지 말아라 > so 하단 padding 부분이 없음 */
+      overflow: hidden;
+    }
+  </style>
+  <div class="box box5">
+    <img src="../html/asset/logo.png" alt="">
+  </div>
+  <style>
+    .box5{
+      overflow-y: hidden;
+    }
+  </style>
+</body>
+</html>

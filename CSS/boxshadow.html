@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box-shadow</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: 0 50px;
+      /* box-sizing: border-box; */
+    }
+    .box{
+      box-sizing: content-box;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      margin: 50px 0;
+      /* box-shadow: x-offset y-offset blur #000000; */
+      box-shadow: 10px 10px 0px #000000;
+    }
+    .box1{
+      box-shadow: 0px 0px 10px #333;
+      background-color: #fff;
+    }
+    .box2{
+      /* 다중 그림자 구분자는 , */
+      box-shadow: 
+      4px 4px 2px #f00,
+      8px 8px 2px #0f0,
+      12px 12px 2px #00f     
+    }
+  </style>
+</head>
+<body>
+  <h1>box-shadow</h1>
+  <p>요소(element 태그)에 그림자 효과를 줍니다.</p>
+  <!-- .box.bo$*3>{box$} -->
+  <div class="box box1">box1</div>
+  <div class="box box2">box2</div>
+  <div class="box box3">box3</div>
+</body>
+</html>
