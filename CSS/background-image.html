@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background image</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      height: 300px;  
+      border: 10px dotted rgba(0,0,0,0.5);    
+      background-color: #ff3;
+      background-image: url(images/flower.png);
+      background-image: url(images/bg.jpg);
+      background-image: none; /*기본값, 초기값 따로 설정하지 않으면 아무것도 없이 background color만 보임*/
+      /* 배경 이미지 사이즈가 요소보다 작을 경우 반복해서 채워줌 
+                                    클 경우 요소 크기만큼만 표시 
+         배경 이미지도 기본값이 테두리부터 채워주는 것
+         배경 이미지가 보이지 않는 부분은 배경색으로 표현 */
+    }
+    .box1{
+      width: 500px;      
+    }
+    .box2{
+      width: 80%;      
+    }
+    .box3{
+      width: 40em;      
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+  </div>
+</body>
+</html>

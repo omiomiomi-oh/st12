@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-origin</title>
+  <!-- backgorund image가 어느 점을 기준으로 보여질지 정해주는 것 -->
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      height: 300px;  
+      border: 10px dashed rgba(255,102,0,0.5);    
+      background-color: #ff3;
+      font-size: 2em;
+      text-align: left;
+      color: #f0f;
+      padding: 50px;
+      margin-bottom: 20px;
+
+      background-image: url(images/frame.png);
+      background-repeat: no-repeat;
+    }
+    .box1{
+      width: 500px; 
+      background-origin: padding-box;  /*기본값*/
+    }
+    .box2{
+      width: 80%;  
+      background-origin: border-box;
+    }
+    .box3{
+      width: 10em;  
+      background-origin: content-box;
+    }
+    .box4{
+      width: auto; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad fugiat neque saepe eaque repellat animi obcaecati repudiandae magnam amet beatae.</div>
+    <div class="box box2">box2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et maxime quo sed velit animi beatae nesciunt ullam nobis doloribus eveniet?</div>
+    <div class="box box3">box3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam totam quod distinctio fuga facilis minus in sapiente exercitationem dicta qui!</div>
+    <div class="box box4">box4 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa iste dolor eligendi atque dignissimos modi delectus tempore quidem eum velit?</div>
+  </div>
+</body>
+</html>
