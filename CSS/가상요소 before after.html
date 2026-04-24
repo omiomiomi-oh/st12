@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 before after</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    h1, h2, h3{
+      font-size: 1.5em;
+    }
+    hr{display: none;}
+
+    .box{
+      margin-top: 100px;
+      padding: 20px 0;
+    }
+    .box1{background-color: #f68;}
+    .box2{background-color: #6f8;}
+    .box3{background-color: #86f;}
+    .box::before{
+      /* content:'앞'; */
+      content:'';
+      display: block;  
+      background-color: #000;
+      width: 3em;
+      height: 4px;
+      margin: auto;
+      margin-top: -70px;
+    }
+    /* .box::after{content:'뒤';} */
+
+    .box .inner{
+      width: 80%;
+      /* 블록레벨을 부모의 가운데 정렬 */
+      margin: 0 auto;
+      margin-top: 70px;
+    }
+    .box .inner::before{
+      content: ''; /*빈 내용*/
+      /* ::before, ::after 가상 요소는 인라인레벨
+        브라우저에서 표시 되기 위해서는 content 속성 반드시 필요, 내용 없이 빈따옴표(빈 내용)만 가능  */
+      display: block; /*인라인 -> 블록레벨*/
+      background-color: #ccc;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding-bottom: 1em ;
+    }
+    /* .box .inner::after{content: '뒤';} */
+    /* p tag 앞/뒤에 content가 위치 >> p tag는 블럭레벨=줄바꿈됨 */
+
+    .box .content::before{content:' 앞 ';}
+    .box .content::after{content: '뒤';}
+
+  </style>
+</head>
+<body>
+  <h1>가상요소 ::before ::after</h1>
+  <hr>
+  <!-- div.box.box$*3>.inner>p.content>lorem15 -->
+  <div class="box box1">
+    <div class="inner">
+      <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ea rem ducimus commodi unde maiores.</p>
+    </div>
+  </div>
+  <div class="box box2">
+    <div class="inner">
+      <p class="content">Fuga, rerum neque tempore, eum eius molestias fugit enim sunt reiciendis quasi corporis voluptates provident.</p>
+    </div>
+  </div>
+  <div class="box box3">
+    <div class="inner">
+      <p class="content">Blanditiis exercitationem dicta maiores neque hic minima, magni est qui deleniti laboriosam at voluptatem sed.</p>
+    </div>
+  </div>
+</body>
+</html>
