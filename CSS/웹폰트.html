@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web font</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- 
+  .noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  } -->
+  <!-- 먼저 웹폰트 선언된 요소 작성 후, 사이트 스타일 작성해야 함 because 동일 요소는 나중에 작성된게 적용됨-->
+  <style>
+    .exam{
+      text-align: center;
+      /* 웹폰트 사용 = font-family */
+      font-family: "Noto Sans KR", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: normal;
+      font-style: normal;
+    }
+    .exam1{
+      font-size: 10em;
+      color: royalblue;
+      font-weight: 200;
+    }
+    .exam2{
+      font-weight: 100;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="exam exam1">
+    제목 Test
+  </div>
+  <div class="exam exam2">설명 Lorem, ipsum dolor.</div>
+  </body>
+</html>
