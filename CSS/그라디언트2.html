@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오로라 그라디언트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .exam {
+            width: 100%;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 50%, #00FFFF 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, #FF00FF 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, #e7ca0e 0%, transparent 50%),
+                radial-gradient(circle at 60% 60%, #8B00FF 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, #00FFFF 0%, #FF00FF 25%, #e7ca0e 50%, #8B00FF 75%, #00FFFF 100%);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .aurora-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 
+                         0 0 40px rgba(255, 255, 255, 0.3);
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam">
+        <div class="aurora-text">
+            Aurora Gradient
+        </div>
+    </div>
+</body>
+</html>

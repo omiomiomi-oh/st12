@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수평 수직 가운데 만들기</title>
+  <!-- 웹폰트 불러오기 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- 
+  
+  .noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  }
+  .nanum-pen-script-regular {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  -->
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .exam{
+      /* 브라우저 수평 수직 가득 사용하기 */
+      width: 100%;
+      height: 100vh;
+      background-color: #ccc;
+      /* 인라인인 .text-wrap을 수평 정렬 */
+      text-align: center;
+      /* 자식의 수직 정렬을 가운데로  */
+      align-content: center;
+      /* 그라디언트 배경 */
+      background: 
+        radial-gradient(ellipse 800px 600px at 20% 30%, #10d8cf 0%, transparent 40%),
+        radial-gradient(ellipse 900px 700px at 80% 20%, #570537 0%, transparent 45%),
+        radial-gradient(ellipse 700px 550px at 60% 70%, #84a33b 0%, transparent 50%),
+        radial-gradient(ellipse 800px 650px at 30% 80%, #641111 0%, transparent 45%),
+        radial-gradient(ellipse 1000px 800px at 70% 60%, #10d8cf 0%, transparent 50%),
+        radial-gradient(ellipse 750px 600px at 45% 45%, #570537 0%, transparent 40%),
+        radial-gradient(ellipse 850px 700px at 15% 60%, #84a33b 0%, transparent 45%),
+        radial-gradient(ellipse 900px 750px at 85% 75%, #641111 0%, transparent 50%);
+      background-size: 
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .exam .text-wrap{
+      display: inline-block;  /*너비를 자식의 크기만큼만 사용*/
+    }
+    .exam .text-wrap .title{
+      font-family: "Nanum Pen Script", cursive;
+      font-size: 200px;
+      color: #fff;
+      letter-spacing: 30px;
+      text-shadow: 14px 4px 6px rgba(110,67,252,0.5);
+    }
+    .exam .text-wrap .desc{
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 30px;
+      margin-top: -50px;
+      letter-spacing: 9px;
+      font-weight: 100;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- .exam>.text-wrap>div.title+div.desc -->
+  <div class="exam">
+    <div class="text-wrap">
+      <div class="title">SALE</div>
+      <div class="desc">여름을 전하는 감사 인사</div>
+    </div>
+  </div>
+</body>
+</html>
