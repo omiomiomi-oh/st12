@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position 1</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .wrap{
+      width: 65%;
+      min-height: 2000px;
+      margin: 0 auto;
+      background-color: #ccc;
+      padding: 30px;
+      border: 10px dashed #999;
+      position: relative;  /*3번 parent의 기준*/
+    }
+    .parent{
+      padding: 10px;
+      
+    }
+    .parent:nth-child(1){
+      background-color: #f86;
+      position: static;
+      /* 기준 없음, normal flow 에서 벗어나지 않음 */
+      /* 레이어 개념 없음 */
+      left: 150px; top: 150px;
+    }
+    .parent:nth-child(2){
+      background-color: #6f8;
+      /* 기준은 자기 자신, 형제, 부모 레이아웃에 영향을 안줌, normal flow 에서 벗어나지 않음 */
+      /* 레이어 개념 있음 -> z-index*/
+      position: relative;
+      left: 150px; top: 150px;
+    }
+    .parent:nth-child(3){
+      background-color: #86f;
+      /* 기준은 가까운 조상 중 position:static을 제외한 조상의 값, 형제, 부모 레이아웃에 영향을 줌, normal flow 에서 벗어남 = 부모 자식의 관계를 잃음(부모가 해당요소의 높이를 인식하지 못함, 부모의 너비를 알지 못함 -> 컨텐츠 영역만큼만 차지) */
+      /* 레이어 개념 있음 -> z-index*/
+      position: absolute;
+      left: 0; top: 0;
+      /* left/right/top/bottom 지정하지 않으면 원래 자기 위치 */
+    }
+    .parent:nth-child(4){
+      background-color: #8f6;
+      /* 기준은 브라우저, 형제, 부모 레이아웃에 영향을 줌, normal flow 에서 벗어남 = 부모 자식의 관계를 잃음(부모가 해당요소의 높이를 인식하지 못함, 부모의 너비를 알지 못함 -> 컨텐츠 영역만큼만 차지) */
+      /* 레이어 개념 있음 -> z-index*/
+      position: fixed;
+      left: 0; top: 0;
+    }
+    .parent:nth-child(5){
+      background-color: #c8f;
+    }
+    .parent .child{
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      position: absolute;
+    }
+    .parent .child:nth-child(1){
+      background-color: #fff;
+    }
+    .parent .child:nth-child(2){
+      background-color: #0dd;
+    }
+    .box{
+      background-color: #dd0;
+    }
+
+    .parent:nth-child(5) .child{
+      position: static;
+    }
+
+    /* 요소의 위치 지정 position */
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .parent*5>.child*2>.box>{box$} -->
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
