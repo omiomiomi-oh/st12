@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position3</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="thumb">
+      <img src="images/testimg.png" alt="">
+      <span class="like">좋아요</span>
+      <span class="sale-box">10%</span>
+    </div>
+  </div>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      margin: 100px 50px;
+      background-color: #cc0;
+    }
+    .thumb{
+      background-color: #f00;
+    }
+    .thumb .like{
+      background-color: #86f;
+    }
+    .thumb .sale-box{
+      background-color: #f68;
+    }
+     /* 좋아요, 10% 요소 크기 50px 50px 지정 */
+    .thumb span{width: 50px; height: 50px;}
+     /* span 인라인 너버.높이 지정하지 못했던 문제 해결 */
+    .thumb span{display: block;}
+
+    .thumb span{
+      position: absolute;
+    }
+     /* 가까운 조상중에 position(static제외한)이 설정되어 있는 요소 기준을 지정 */
+    .thumb{
+      position: relative;
+    }
+    .thumb span.like{
+      left : 10px; top: 10px;
+    }
+    .thumb span.sale-box{
+      right: 10px; top: 10px;
+    }
+    .thumb{
+      width: 25%;
+    }
+    .thumb img{
+      width: 100%; 
+      display: block;
+    }
+
+   
+  </style>
+</body>
+</html>
