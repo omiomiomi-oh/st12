@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position 4</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ol, ul{list-style: none;}
+
+    .wrap{
+      background-color: beige;
+      margin: 30px;
+    }
+
+    /* 상품카드 썸네일 */
+    .ec-base-product{
+      
+    }
+    .ec-base-product .prdList{
+      background-color: #333;
+      border: 1px solid #f00;
+    }
+    .ec-base-product .prdList::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .prdList li{
+      /* 1줄에 4단 상품 사진 단처리 */
+      float: left; /*normal flow에서 벗어나 자식 요소의 높이 인식 못함 >> clearfix(부모에게 after 적용)*/
+      width: 25%;
+      box-sizing: border-box;
+      background-color: #cc0;   /*테스트 후 삭제*/
+      border: 1px solid #000;   /*테스트 후 삭제*/  
+    }
+    .prdList li .prdList__item{
+      position: relative;
+      
+    }
+    .prdList li .prdList__item .thumbnail{
+      /* position: relative; */
+
+    }
+    .prdList li .prdList__item .thumbnail img{
+      opacity: 0.5;  /*테스트 후 삭제*/
+      /* 이미지 사이즈를 부모의 너비에 맞게 자동 조절 되도록 = 이미자가 부모의 컨텐츠 너비를 다 사용 = width=100% */
+      width: 100%;
+      display: block;
+    }
+    .prdList li .prdList__item .thumbnail .sale_box{
+      right: 10px;
+      top: 10px;
+      position: absolute;
+      
+    }
+    .prdList li .prdList__item .thumbnail .likeButton{
+      left: 10px;
+      top: 10px;
+      position: absolute;
+
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="ec-base-product">
+      <!-- ul.prdList>li*6>div.prdList__item>.thumbnail>img+.sale_box+likeButton -->
+      <ul class="prdList">
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/testimg.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likeButton">Like</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
