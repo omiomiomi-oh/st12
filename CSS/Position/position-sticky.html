@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position - sticky</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .section:nth-child(odd){
+      background-color: #68f;
+    }
+    .section:nth-child(even){
+      background-color: #f86;
+    }
+    .section-title,
+    .content-wrap{
+      width: 80%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .section .section-title{
+      background-color: #fff;
+      /* line-height: 50px;  높이를 고정한 상태로 수직 가운데 정렬 */
+      font-size: 2em;
+      padding: 1em 2em;     /*글자 크기에 따라 수직 크기가 달라지는 가운데 수직 가운데 정렬*/
+      position: sticky;
+      top: 50px;      /*부모의 요소의 브라우저 위치가 해당 값에 도달하면 고정됨*/
+    }
+    .section .content-wrap{
+      background-color: beige;
+      height: 110vh;
+    }
+    
+  
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .section.section$*4>p.section-title+.content-wrap -->
+    <div class="section section1">
+      <p class="section-title">section1</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section2">
+      <p class="section-title">section2</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section3">
+      <p class="section-title">section3</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section4">
+      <p class="section-title">section4</p>
+      <div class="content-wrap"></div>
+    </div>
+  </div>
+</body>
+</html>
