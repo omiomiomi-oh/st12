@@ -37,6 +37,7 @@
     header .gnb-wrap{
       background-color: #cfc;
       margin-left: 50px;
+      display: block;
     }
   
   header .logo,
@@ -62,8 +63,24 @@
   }
   
   header .m-nav-btn{
-    display: none;
+    /* display: none; */
   }
+
+  @media (min-width:1025px){
+    .mobile-only-block{
+      display: none;
+    }
+
+  }
+
+  @media (max-width:1024px){
+    .pc-only{
+      display: none !important; 
+    }
+    .mobile-only-block{
+      display: block;
+    }
+  }/*@media (max-width:1024px) 마감*/
 
   </style>
 </head>
@@ -72,7 +89,7 @@
     <header>
       <div class="inner">
         <h1 class="logo">CHOI</h1>
-        <nav class="gnb-wrap">
+        <nav class="gnb-wrap pc-only">
           <ul class="gnb">
             <li><a href="">menu1</a></li>
             <li><a href="">menu2</a></li>
@@ -85,7 +102,7 @@
           <a href="">상단기능메뉴1</a><a href="">상단기능메뉴2</a><a href="">상단기능메뉴3</a>
         </div>   
         <!-- util 마감 -->
-        <div class="m-nav-btn"><img src="images/menu.png" alt="모바일 사이드 메뉴 펼치기"></div>
+        <div class="m-nav-btn mobile-only-block"><img src="images/menu.png" alt="모바일 사이드 메뉴 펼치기"></div>
       </div>
       <!-- inner 마감 -->
     </header>
