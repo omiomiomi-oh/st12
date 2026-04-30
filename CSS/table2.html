@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table 2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    table{
+      border: 1px solid #000;
+      margin-bottom: 20px;
+    }
+    table, tr, th, td{
+      box-sizing: border-box;
+    }
+    tr{
+      border: 1px solid #f00;      
+    }
+    th, td{
+      border: 1px solid #00f;      
+    }
+    .table1{
+      table-layout: auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .table2{
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1){
+      width: 150px;
+    }
+    .table2 th:nth-child(2),
+    .table2 td:nth-child(2){
+      width: 60%;
+    }
+
+  </style>
+</head>
+<body>
+  <table class="table1">
+    <!-- tr>th*4>{제목$} -->
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <!-- tr*2>td*4>{내용$} -->
+    <tr>
+      <td>Lorem, ipsum.</td>
+      <td>Lorem, ipsum dolor.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti impedit illum dolorum voluptatem sit nobis recusandae eaque repellat facere maxime unde voluptates sed nesciunt eum adipisci dolor optio rerum sint exercitationem, reiciendis quasi itaque. Voluptatibus corporis, inventore doloribus non excepturi dolor optio aliquid deleniti distinctio possimus laboriosam earum, ipsa reprehenderit dolore iusto repellendus voluptatem, ratione facilis! Voluptatum debitis dignissimos eius?</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <table class="table2">
+    <!-- tr>th*4>{제목$} -->
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <!-- tr*2>td*4>{내용$} -->
+    <tr>
+      <td>Lorem, ipsum dolor.</td>
+      <td>Lorem, ipsum.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse provident, dolor optio eveniet, sunt, deleniti saepe dicta doloribus fugiat adipisci mollitia quibusdam nisi vero in. Explicabo aperiam nisi aspernatur accusantium doloribus! Recusandae laboriosam ut sed voluptatum quibusdam quisquam quae amet sint quam veritatis, fugit excepturi ad vel quasi, sapiente ratione ab qui nemo facilis labore neque expedita. Laborum, a sapiente.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>
