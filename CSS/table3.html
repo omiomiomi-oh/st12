@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table 3 - 테두리 배경색</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    table{
+      margin-bottom: 20px;
+    }
+    table, tr, th, td{
+      box-sizing: border-box;
+    }   
+    
+    .table1{
+      table-layout: auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .table2{
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+      border-top: 4px solid #000;
+      min-width: 1000px;
+    }
+
+    .table1 th, .table1 td{
+      border-bottom: 1px solid #000;
+    }
+    .table1 th:first-child,
+    .table1 td:first-child{
+      border-left: 1px solid #000;
+    }
+    .table1 th:last-child,
+    .table1 td:last-child{
+      border-right: 1px solid #000;
+    }
+    .table1 tr:first-child th{
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    .table1 td{
+      padding: 0.5rem 1rem;     
+      
+    }
+
+    .table2 th, .table2 td{
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 0.5rem 1rem;
+    }
+    .table2 th:last-child, 
+    .table2 td:last-child{
+      border-right: none 0px;
+    }
+    
+    .table2 tr:last-child td:first-child{
+      vertical-align: top;
+    }
+    .table2 tr:last-child td:nth-child(4){
+      vertical-align: bottom;
+    }
+    .table2 tr:last-child td:nth-last-child(2){    /*마지막 줄 뒤에서 몇번째 칸인지*/
+      vertical-align: middle;
+    }
+
+
+    
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1){
+      width: 150px;
+    }
+    .table2 th:nth-child(2),
+    .table2 td:nth-child(2){
+      width: 60%;
+    }
+
+  </style>
+</head>
+<body>
+  <table class="table1">
+    <!-- tr>th*4>{제목$} -->
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <!-- tr*2>td*4>{내용$} -->
+    <tr>
+      <td>Lorem, ipsum.</td>
+      <td>Lorem, ipsum dolor.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <table class="table2">
+    <!-- tr>th*4>{제목$} -->
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <!-- tr*2>td*4>{내용$} -->
+    <tr>
+      <td>Lorem, ipsum dolor.</td>
+      <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At reprehenderit aliquam soluta aut animi incidunt non saepe velit. Nostrum, fugit.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus doloribus voluptate nulla dolorem, officia aut ad vero nobis quia molestiae repellendus! Provident eveniet, explicabo voluptatum voluptatem id magnam, tempore magni atque tenetur voluptate voluptates, at vitae deserunt illo labore molestias soluta maiores officiis aliquam non fugit harum rem ab. Obcaecati?</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>
