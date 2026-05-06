@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex1 수직 수평 가운데 정렬</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .visual-section{
+      display: flex;
+      background-color: #ccc;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100vh;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      background-image: url(../CSS/images/background-test.jpg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: auto 150%;
+
+    }
+    .visual-section .text-wrap{
+      background-color: #cff;
+      flex:none;
+      width: 50%;
+      min-width: 300px;
+      max-width: 500px;
+      box-sizing: border-box;
+      padding: 1rem 2rem;
+      margin-right: 100px;
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <div class="text-wrap">
+        <div class="title">Title</div>
+        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi enim debitis itaque, explicabo atque distinctio quo eum. Rem, optio porro!</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
