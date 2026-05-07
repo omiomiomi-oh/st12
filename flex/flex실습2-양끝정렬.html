@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex</title>
+  <title>Flex 실습2 - 양끝 정렬</title>
   <link rel="stylesheet" href="../reset.css">
    <!-- 
   1. flex 선언   container
@@ -29,8 +29,24 @@
     #top_nav_box .top_mypage{width: 150px;} */
 
     /* flex */
-    .inner{}
-    #top_nav_box{}
+    .inner{
+      width: 90%; 
+      display: flex;
+      /* justify-content: center; */
+      margin: 0 auto;
+    }
+    #top_nav_box{
+      width: 100%;
+      display: flex;
+      /* flex-direction: row; */
+      /* flex-wrap: nowrap; */
+      justify-content: space-between;
+    }
+    #top_nav_box>div{
+      /* flex-grow: 0; */
+      /* flex-shrink: 1; */
+      /* flex-basis: auto; */
+    }
     #top_nav_box .top_logo{}
     #top_nav_box .top_category{}
     #top_nav_box .top_mypage{}
@@ -40,7 +56,6 @@
   <div class="inner">
     <div class="top_nav_box" id="top_nav_box">
       <div class="top_logo">Logo</div>
-      <div class="top_category">Category</div>
       <div class="top_mypage">My Page</div>
     </div>
     <!-- #top_nav_box 마감 -->
