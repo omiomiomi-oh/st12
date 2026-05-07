@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex에서 margin의 활용</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .container{
+      background-color: #ccc;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      /* align-items: stretch;  기본값, 교차 크기(아이템의 width, height)가 auto로 되어 있을 때 stretch */
+    }
+    .item{
+      width: 100px;
+      height: 100px;
+      background-color: magenta;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">아이템</div>
+  </div>
+</body>
+</html>

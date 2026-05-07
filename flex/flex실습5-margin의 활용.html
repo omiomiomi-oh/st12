@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex</title>
+  <title>Flex 실습5 - margin의 활용</title>
   <link rel="stylesheet" href="../reset.css">
    <!-- 
   1. flex 선언   container
@@ -29,11 +29,20 @@
     #top_nav_box .top_mypage{width: 150px;} */
 
     /* flex */
-    .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
-    #top_nav_box .top_category{}
-    #top_nav_box .top_mypage{}
+    .inner{
+      display: flex;
+    }
+    #top_nav_box{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    #top_nav_box>div{
+      /* flex-basis:auto */
+    }
+   #top_nav_box .top_logo{width: 100px;}
+    #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+    #top_nav_box .top_mypage{width: 150px; margin-left: auto;}
   </style>
 </head>
 <body>

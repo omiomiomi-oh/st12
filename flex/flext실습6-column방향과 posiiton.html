@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex</title>
+  <title>Flex 실습 6</title>
   <link rel="stylesheet" href="../reset.css">
    <!-- 
   1. flex 선언   container
@@ -18,19 +18,29 @@
   <style>
     /* 모양 */
     .inner{background-color: #ccc;}
-    #top_nav_box{background-color: #fcc; box-sizing: border-box;}
+    #top_nav_box{background-color: #fcc; box-sizing: border-box; }
     #top_nav_box>div{box-sizing: border-box; padding: 0.5rem;}
     #top_nav_box .top_logo{background-color: beige;}
     #top_nav_box .top_category{background-color: dodgerblue;}
     #top_nav_box .top_mypage{background-color: purple;}
     /* size */
-    /* #top_nav_box .top_logo{width: 100px;}
+    #top_nav_box .top_logo{width: 100px;}
     #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
-    #top_nav_box .top_mypage{width: 150px;} */
+    #top_nav_box .top_mypage{
+      width: 150px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
 
     /* flex */
     .inner{}
-    #top_nav_box{}
+    #top_nav_box{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
     #top_nav_box .top_logo{}
     #top_nav_box .top_category{}
     #top_nav_box .top_mypage{}
