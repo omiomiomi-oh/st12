@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid 미리보기</title>
+  <title>Grid 1- 행열의 크기 지정 키워드</title>
   <link rel="stylesheet" href="../reset.css">
 </head>
 <!-- grid
@@ -22,23 +22,28 @@
   }
   .grid-container .item{
     background-color: dodgerblue;
+    border: 1px solid magenta;
+    box-sizing: border-box;
   }
   /* grid */
   .grid-container{
     display: grid;
-    /* repeat 함수 횟수 부분에 auto-fill/ auto-fit 넣을 수 있음 */
-    grid-template-columns: repeat(auto-fill, 100px);
-    grid-template-columns: repeat(auto-fit, 100px);
-    grid-template-columns: repeat(auto-fill, minmax(100px, auto));
-    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
-
-    gap: 20px 20px;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 100px auto 2rem;
+    /* 크기 auto = 정렬이 선택되지 않은 상태에서 컨테이너에 남은 공간 */
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-columns: repeat(4, 3fr);
+    /* minmax(최소값, 최대값) 최소값에는 fr 단위 사용 불가*/
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 25%));
+    grid-template-columns: repeat(3, fit-content(300px));
+    /* fit-content(최대크기)
+      아이템의 내용이 최대 크기보다 크지 않을 경우 내용에 맞추고 내용이 제한한 크기보다 클 경우 최대값으로 고정   
+    */
     
   }
   /* grid item */
   .grid-container .item{
-    aspect-ratio: 1;
 
   }
   /* 4. 아이템 배치  */
@@ -63,10 +68,9 @@
 </style>
 <body>
   <div class="wrap">
-    <h1>@media 없이 반응형으로 작성 - auto-fit</h1>
     <div class="grid-container">
-      <div class="item">아이템1</div>
-      <div class="item">아이템2</div>
+      <div class="item">Lorem ipsum dolor sit.</div>
+      <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, molestiae.</div>
       <div class="item">아이템3</div>
       <div class="item">아이템4</div>
       <div class="item">아이템5</div>
