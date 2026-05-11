@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid 1- 행열의 크기 지정 키워드</title>
+  <link rel="stylesheet" href="../reset.css">
+</head>
+<!-- grid
+  1. container에게 grid 선언 @container
+  2. grid의 행, 열 개수, 크기 @container
+  3. 암시적 grid 선언(생략 가능) @container
+  4. 아이템 배치 @item   >>생략하면 한줄 한칸이 기본값
+  5. 여백
+  6. 정렬
+-->
+<style>
+  .wrap{margin: 50px;}
+  /* 모양 */
+  .grid-container{
+    background-color: #ccc;
+  }
+  .grid-container .item{
+    background-color: dodgerblue;
+    border: 1px solid magenta;
+    box-sizing: border-box;
+  }
+  /* grid */
+  .grid-container{
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 100px auto 2rem;
+    /* 크기 auto = 정렬이 선택되지 않은 상태에서 컨테이너에 남은 공간 */
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-columns: repeat(4, 3fr);
+    /* minmax(최소값, 최대값) 최소값에는 fr 단위 사용 불가*/
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 25%));
+    grid-template-columns: repeat(3, fit-content(300px));
+    /* fit-content(최대크기)
+      아이템의 내용이 최대 크기보다 크지 않을 경우 내용에 맞추고 내용이 제한한 크기보다 클 경우 최대값으로 고정   
+    */
+    
+  }
+  /* grid item */
+  .grid-container .item{
+
+  }
+  /* 4. 아이템 배치  */
+  .grid-container .item:nth-child(1){
+
+  }
+  .grid-container .item:nth-child(2){
+    
+  }
+  .grid-container .item:nth-child(3){
+
+  }
+  .grid-container .item:nth-child(4){
+
+  }
+  .grid-container .item:nth-child(5){
+
+  }
+  .grid-container .item:nth-child(6){
+    
+  }
+</style>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+      <div class="item">Lorem ipsum dolor sit.</div>
+      <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, molestiae.</div>
+      <div class="item">아이템3</div>
+      <div class="item">아이템4</div>
+      <div class="item">아이템5</div>
+      <div class="item">아이템6</div>
+      <div class="item">아이템7</div>
+      <div class="item">아이템8</div>
+    </div>
+  </div>
+</body>
+</html>

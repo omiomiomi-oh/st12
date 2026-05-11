@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid 2- 아이템 배치 2</title>
+  <link rel="stylesheet" href="../reset.css">
+</head>
+<!-- grid
+  1. container에게 grid 선언 @container
+  2. grid의 행, 열 개수, 크기 @container
+  3. 암시적 grid 선언(생략 가능) @container
+  4. 아이템 배치 @item   >>생략하면 한줄 한칸이 기본값
+  5. 여백
+  6. 정렬
+-->
+<style>
+  .wrap{margin: 50px;}
+  /* 모양 */
+  .grid-container{
+    background-color: #ccc;
+  }
+  .grid-container .item{
+    background-color: dodgerblue;
+    box-sizing: border-box;
+    border: 4px solid magenta;
+  }
+  /* grid */
+  .grid-container{
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    
+  }
+  /* grid item -> display: grid; 요소의 직계 자식만이 그리드 아이템*/
+  .grid-container .item{
+   
+  }
+  /* 4. 아이템 배치  */
+  .grid-container .item:nth-child(1){
+    grid-column: 1/5;
+    grid-column: 1/-1;
+    grid-column: 1/span 4;    
+
+  }
+  .grid-container .item:nth-child(2){
+    grid-column: 1/span 2;
+  }
+  .grid-container .item:nth-child(3){
+    grid-column: 1/span 2;
+  }
+  .grid-container .item:nth-child(4){
+    grid-row: 2/4;
+    grid-column: 3;
+  }
+  .grid-container .item:nth-child(5){
+     grid-row: 2/4;
+    grid-column: 4;
+  }
+  .grid-container .item:nth-child(6){
+    
+  }
+</style>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
+      <div class="item">아이템3</div>
+      <div class="item">아이템4</div>
+      <div class="item">아이템5</div>
+
+    </div>
+  </div>
+</body>
+</html>
