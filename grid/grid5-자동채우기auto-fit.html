@@ -3,57 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid 5- 자동 채우기 auto-fit/fill</title>
+  <title>grid5 자동채우기(auto-fit/auto-fill) </title>
   <link rel="stylesheet" href="../reset.css">
-</head>
-<!-- grid
-  1. container에게 grid 선언 @container
-  2. grid의 행, 열 개수, 크기 @container
-  3. 암시적 grid 선언(생략 가능) @container
-  4. 아이템 배치 @item   >>생략하면 한줄 한칸이 기본값
+  <!-- grid 
+  1. container에게 grid선언(container)
+  2. 행열 줄칸갯수, 크기 (container)
+  3. 암시적 그리드선언 (생략가능)(container)
+  4. 아이템배치 (item) (생략 한줄한칸)
   5. 여백
   6. 정렬
--->
-<style>
-  .wrap{margin: 50px;}
-  /* 모양 */
-  .grid-container{
-    background-color: #ccc;
-  }
-  .grid-container .item{
-    background-color: dodgerblue;
-  }
-  /* grid */
-  .grid-container{
-    display: grid;
+  -->
+
+  <style>
+    .wrap{
+      margin:50px;
+    }
+    /* 모양 */
+    .grid-container{
+      background-color: #ccc;
+      
+    }
+    .grid-container .item{
+      background-color: dodgerblue;
+
+    }
+
+    /* grid */
+    .grid-container{
+      display: grid;
+      /* 2 행열갯수 크기 */
+      /* repeat(반복횟수, 크기) */
+      /* repeat(자동채우기예약어, 크기) 
+      자동채우기예약어
+      빈아이템일때 어떻게 처리확인
+      auto-fill
+      auto-fit      
+      */
+      grid-template-columns: repeat(auto-fill,100px);
+      grid-template-columns: repeat(auto-fit,100px);
+      grid-template-columns: repeat(auto-fill,minmax(100px, auto));
+      grid-template-columns: repeat(auto-fit,minmax(100px, auto));
+
+      grid-template-columns: repeat(auto-fill,minmax(320px, auto));
+      grid-template-columns: repeat(auto-fit,minmax(320px, auto));
+      /* 3,4 기본값 */
+      /* 5 */
+      gap:20px 20px;
+    }
     
-  }
-  /* grid item */
-  .grid-container .item{
+    /* grid item */
+    .grid-container .item{
+      aspect-ratio: 1;
 
-  }
-  /* 4. 아이템 배치  */
-  .grid-container .item:nth-child(1){
+    }
+     .grid-container .item:nth-child(1){
+     }
+     .grid-container .item:nth-child(2){
+     }
+     .grid-container .item:nth-child(3){
+     }
+     .grid-container .item:nth-child(4){
+     }
+     .grid-container .item:nth-child(5){
+     }
+     .grid-container .item:nth-child(6){
+     }
 
-  }
-  .grid-container .item:nth-child(2){
-    
-  }
-  .grid-container .item:nth-child(3){
 
-  }
-  .grid-container .item:nth-child(4){
+  </style>
 
-  }
-  .grid-container .item:nth-child(5){
-
-  }
-  .grid-container .item:nth-child(6){
-    
-  }
-</style>
+</head>
 <body>
   <div class="wrap">
+    <h1>@media 없이 반응형으로 작성-auto-fit</h1>
     <div class="grid-container">
       <div class="item">아이템1</div>
       <div class="item">아이템2</div>
