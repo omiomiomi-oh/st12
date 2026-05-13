@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper 연습2 - 여러개의 슬라이드 보여주기</title>
+  <link rel="stylesheet" href="../reset.css">
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <style>
+    .visual-section .swiper-slide{
+      position: relative;
+    }
+    .visual-section .swiper-slide span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+    /* 슬라이드 위치 확인 후 삭제 */
+    
+    .visual-section{
+      /* 선택자와 후손에서 사용될 변수 선언, var(변수명, 기본값) */
+      --swiper-control-position-bottom:-40px;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden;
+      padding-bottom: 80px;
+    }
+    .visual-section .swiper {
+      overflow: visible;
+      max-width: 1420px;
+      width: 92%;
+    }
+    .visual-section .swiper-wrapper{
+      /* swiper 작동을 위해 gap 값이 아닌 spaceBetween 속성값을 지정 */
+      /* gap: 20px; */
+    }
+    .visual-section .swiper-slide{
+      /* width: auto; */
+      /* width: 33.33%; */
+      /*  */
+    }
+    .visual-section .swiper-slide > a{
+      display: block;
+    }
+    .visual-section .swiper-slide > a > img{
+      display: block;
+      width: 100%;
+    }
+
+    .visual-section .swiper-pagination-progressbar{
+      /* height: auto; */      
+      bottom: var(--swiper-control-position-bottom);
+      width: 100%;
+      /* 기존의 top 값이 있다면 무력화하기 위해 top에 auto 값을 줌 */
+      top: auto;
+      width: calc(100% - 120px);
+    }
+    .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background-color: #000;
+    }
+    .visual-section .swiper-button{
+      position: absolute;
+      right: 0px;
+      bottom:var(--swiper-control-position-bottom);
+      transform: translate(0, 50%);
+    }
+    .visual-section .swiper-button>div{
+      /* position:absolute 무력화 */
+      position: static;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+    .visual-section .swiper-button .swiper-button-prev,
+    .visual-section .swiper-button .swiper-button-next{
+      /* width: 24px;
+      height: 24px; */
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .visual-section .swiper-button .swiper-button-prev::after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 80%;
+      background-color: #ccc;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+
+    }
+
+    .visual-section .swiper-button .swiper-button-prev > img,
+    .visual-section .swiper-button .swiper-button-next > img{
+      width: 100%;
+      display: block;
+    }
+    .visual-section .swiper-button .swiper-button-next > img{
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Slider main container -->
+  <div class="section visual-section">
+    <div class="swiper swiper1">
+    <!-- Additional required wrapper -->
+     <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=1" alt="">
+        <span>1번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=2" alt="">
+        <span>2번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=3" alt="">
+        <span>3번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=4" alt=""></a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=5" alt=""></a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=6" alt=""></a>
+      </div>
+    
+      </div>
+      <!-- swiper-wrapper -->
+
+    <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    <div class="swiper-button">
+      <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev">
+          <img src="/swiper/images/arrow_back_48dp.png" alt="이전 슬라이드로 이동">
+        </div>
+        <div class="swiper-button-next">
+          <img src="/swiper/images/arrow_back_48dp.png" alt="다음 슬라이드로 이동">
+        </div>
+        <!-- play/stop button 추가 -->
+        <div>버</div>        
+    </div>    <!-- .control-button -->
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+    </div>    <!-- swiper -->
+  </div>  <!-- //visual-section -->
+
+<script>
+  const swiper1 = new Swiper('.swiper1', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  centeredSlides: true,
+  //swiper 안에 몇개 이미지 보여줄지 결정
+  slidesPerView: 3,
+  spaceBetween: 20,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type:'progressbar',      
+    clickable:true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    addIcons: false,
+  },
+
+  // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+});
+</script>
+</body>
+</html>

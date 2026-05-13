@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiper 기본</title>
+  <title>Swiper 4- bullet 대신 progress bar</title>
   <link rel="stylesheet" href="../reset.css">
   
   <link
@@ -38,8 +38,9 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+  <!-- If we need scrollbar
+  <div class="swiper-scrollbar"></div> 
+  pagination = progress bar 이용 시 scroll bar 항목은 제거 필요(안그러면 바닥에 bar 남아 있음)-->
 </div>
 <script>
   const swiper1 = new Swiper('.swiper1', {
@@ -50,6 +51,8 @@
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    type:'progressbar',
+    clickable:true,
   },
 
   // Navigation arrows
@@ -58,10 +61,10 @@
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  // // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
 });
 </script>
 </body>
