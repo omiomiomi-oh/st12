@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper 연습3-네비게이션 아이콘 바꾸기</title>
+  <link rel="stylesheet" href="../reset.css">
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <style>
+    .swiper {
+      width: 80%;
+     height: 50vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Slider main container -->
+  <div class="swiper swiper1">
+  <!-- Additional required wrapper -->
+   <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    
+    </div>
+  <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"><img src="/swiper/images/arrow_back_48dp.png" alt=""></div>
+    <div class="swiper-button-next"><img src="/swiper/images/arrow_forward_48dp.png" alt=""></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+<script>
+  const swiper1 = new Swiper('.swiper1', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    //내가 이미지를 추가했을 때
+    addIcons:false,
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</body>
+</html>
