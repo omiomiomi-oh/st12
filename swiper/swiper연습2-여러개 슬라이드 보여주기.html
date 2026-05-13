@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper 연습2 - 여러개의 슬라이드 보여주기</title>
+  <link rel="stylesheet" href="../reset.css">
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <style>
+    .visual-section .swiper-slide{
+      position: relative;
+    }
+    .visual-section .swiper-slide span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+    /* 슬라이드 위치 확인 후 삭제 */
+    
+    .visual-section{
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden;
+    }
+    .visual-section .swiper {
+      overflow: visible;
+      max-width: 1420px;
+      width: 92%;
+    }
+    /* .visual-section .swiper-wrapper{
+      gap: 20px;
+    } */
+    .visual-section .swiper-slide{
+      /* width: auto; */
+      width: 33.33%;
+      
+    }
+    .visual-section .swiper-slide > a{
+      display: block;
+    }
+    .visual-section .swiper-slide > a > img{
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Slider main container -->
+  <div class="section visual-section">
+    <div class="swiper swiper1">
+    <!-- Additional required wrapper -->
+     <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=1" alt="">
+        <span>1번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=2" alt="">
+        <span>2번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=3" alt="">
+        <span>3번 슬라이드</span>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=4" alt=""></a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=5" alt=""></a>
+      </div>
+      <div class="swiper-slide">
+        <a href=""><img src="https://picsum.photos/400/500?random=6" alt=""></a>
+      </div>
+    
+      </div>
+      <!-- swiper-wrapper -->
+
+    <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- swiper -->
+  </div>
+  <!-- //visual-section -->
+
+<script>
+  const swiper1 = new Swiper('.swiper1', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  centeredSlides: true,
+  //swiper 안에 몇개 이미지 보여줄지 결정
+  slidesPerView: 3,
+  spaceBetween: 20,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</body>
+</html>
