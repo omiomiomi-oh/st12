@@ -208,6 +208,12 @@
   slidesPerView: 3,
   spaceBetween: 20,
 
+  // Autoplay
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -227,6 +233,23 @@
   //   el: '.swiper-scrollbar',
   // },
 });
+
+// Play/Pause toggle button functionality
+const playToggle = document.querySelector('.swiper-button-play-toggle');
+playToggle.addEventListener('click', () => {
+  if (swiper1.autoplay.running) {
+    swiper1.autoplay.stop();
+    playToggle.classList.remove('is-play');
+    playToggle.classList.add('is-pause');
+  } else {
+    swiper1.autoplay.start();
+    playToggle.classList.remove('is-pause');
+    playToggle.classList.add('is-play');
+  }
+});
+
+// Initialize autoplay as stopped
+swiper1.autoplay.stop();
 </script>
 </body>
 </html>
