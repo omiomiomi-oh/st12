@@ -198,58 +198,7 @@
     </div>     <!-- //swiper -->
   </div>  <!-- //visual-section -->
 
-<script>
-  const swiper1 = new Swiper('.swiper1', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  centeredSlides: true,
-  //swiper 안에 몇개 이미지 보여줄지 결정
-  slidesPerView: 3,
-  spaceBetween: 20,
-
-  // Autoplay
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    type:'progressbar',      
-    clickable:true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    addIcons: false,
-  },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
-});
-
-// Play/Pause toggle button functionality
-const playToggle = document.querySelector('.swiper-button-play-toggle');
-playToggle.addEventListener('click', () => {
-  if (swiper1.autoplay.running) {
-    swiper1.autoplay.stop();
-    playToggle.classList.remove('is-play');
-    playToggle.classList.add('is-pause');
-  } else {
-    swiper1.autoplay.start();
-    playToggle.classList.remove('is-pause');
-    playToggle.classList.add('is-play');
-  }
-});
-
-// Initialize autoplay as stopped
-swiper1.autoplay.stop();
-</script>
+<!-- myscript.js: Swiper autoplay 및 재생/정지 토글 분리 -->
+<script src="/myfolder/js/myscript.js" defer></script>
 </body>
 </html>
