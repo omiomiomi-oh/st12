@@ -1,0 +1,126 @@
+
+    .visual-section .swiper-slide{
+      position: relative;
+    }
+    .visual-section .swiper-slide span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+    /* 슬라이드 위치 확인 후 삭제 */
+    
+    .visual-section{
+      /* 선택자와 후손에서 사용될 변수 선언, var(변수명, 기본값) */
+      --swiper-control-position-bottom:-40px;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden;
+      padding-bottom: 80px;
+    }
+    .visual-section .swiper {
+      overflow: visible;
+      max-width: 1420px;
+      width: 92%;
+      /* cafe24 swiper css ver. 맞춰서 수정 */
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .visual-section .swiper-wrapper{
+      /* swiper 작동을 위해 gap 값이 아닌 spaceBetween 속성값을 지정 */
+      /* gap: 20px; */
+    }
+    .visual-section .swiper-slide{
+      /* width: auto; */
+      /* width: 33.33%; */
+      /*  */
+    }
+    .visual-section .swiper-slide > a{
+      display: block;
+    }
+    .visual-section .swiper-slide > a > img{
+      display: block;
+      width: 100%;
+    }
+
+    .visual-section .swiper-pagination-progressbar{
+      /* height: auto; */      
+      bottom: var(--swiper-control-position-bottom);
+      width: 100%;
+      /* 기존의 top 값이 있다면 무력화하기 위해 top에 auto 값을 줌 */
+      top: auto;
+      width: calc(100% - 120px);
+    }
+    .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background-color: #000;
+    }
+    .visual-section .swiper-button{
+      position: absolute;
+      right: 0px;
+      bottom:var(--swiper-control-position-bottom);
+      transform: translate(0, 100%);
+    }
+    .visual-section .swiper-button>div{
+      /* position:absolute 무력화 */
+      position: static;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      left: auto;
+      right: auto;
+      bottom: auto;
+
+    }
+    .visual-section .swiper-button .swiper-button-prev,
+    .visual-section .swiper-button .swiper-button-next{
+      /* width: 24px;
+      height: 24px; */
+      padding-left: 10px;
+      padding-right: 10px;
+      background-image: none;
+    }
+    .visual-section .swiper-button .swiper-button-prev::after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 80%;
+      background-color: #ccc;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+
+    }
+
+    .visual-section .swiper-button .swiper-button-prev > img,
+    .visual-section .swiper-button .swiper-button-next > img{
+      width: 100%;
+      display: block;
+    }
+    .visual-section .swiper-button .swiper-button-next > img{
+      transform: rotate(180deg);
+      
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle{}
+    .visual-section .swiper-button .swiper-button-play-toggle>span{
+      display: block;
+      padding-left: 100%;
+      background-size: contain;
+      overflow: hidden;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
+      background-image: url(/myfolder/images/pause_48dp.png);
+      background-repeat: no-repeat;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
+      background-image: url(/myfolder/images/play_arrow_48dp.png);
+      background-repeat: no-repeat;
+    }
+    /* is-play = pause 표시, is-pause = play 표시 */
+    .visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause,
+    .visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play{
+      display: none;
+    }
+  

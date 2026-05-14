@@ -1,0 +1,51 @@
+<aside id="aside" module="layout_slidePackage" data-ez="contents-15cqgc6-1">
+    <!--@css(/layout/basic/css/slideMenu.css)-->
+	<!--@js(/layout/basic/js/slide_menu.js)-->
+    <nav class="navigation-menu" role="navigation">
+		<div class="slide_top_inner">
+			<div class="slide_logo" module="Layout_LogoTop"><a href="/">{$mall_name}</a></div><!-- //slide_logo -->
+			<button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
+
+			<div class="navigation_state" data-ez-group="top-util-menu" data-ez-role="list">
+				<a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
+				<a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
+				<a data-ez-item="modify" module="Layout_stateLogon" href="/member/modify.html">내정보수정</a>
+				<a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
+				<a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
+				<a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
+				<a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
+			</div><!-- //navigation_state -->
+		</div><!-- //navigation-menu -->
+
+		<div class="nav_inner">
+			<div class="tab_inner">
+				<div data-ez-module="menu-side/1"><div id="slideCateList" class="navigation-menu__category">
+  <ul id="slide_add_category"><li><a href="/category/%EC%98%A4%EB%8A%98%EB%A7%8C-%ED%8A%B9%EA%B0%80/53/" class="view">오늘만 특가</a><ul class="sub_cate01"><li><a href="/category/%EC%A0%84%EC%B2%B4/58/" class="view">전체</a></li><li><a href="/category/%EC%A0%9C%EC%A3%BC-%ED%9D%99%EB%8B%B9%EA%B7%BC/56/" class="view">제주 흙당근</a></li><li><a href="/category/%EA%B5%AC%EB%A1%80-%EB%B0%B0%EC%B6%94/57/" class="view">구례 배추</a></li></ul></li><li><a href="/category/%EC%8B%A0%EC%84%A0%EC%8B%9D%ED%92%88/42/" class="view">신선식품</a></li><li><a href="/category/%EA%B0%80%EA%B3%B5%EC%8B%9D%ED%92%88/43/" class="view">가공식품</a></li><li><a href="/category/%EB%B0%80%ED%82%A4%ED%8A%B8/44/" class="view">밀키트</a></li><li><a href="/category/%EC%9D%8C%EB%A3%8C%EC%A3%BC%EB%A5%98/45/" class="view">음료/주류</a></li><li><a href="/category/%EA%B8%B0%ED%83%80/46/" class="view">기타</a></li><li><a href="/category/Made/59/" class="view">Made</a><ul class="sub_cate01"><li><a href="/category/top/60/" class="view">top</a></li><li><a href="/category/dress/61/" class="view">dress</a></li></ul></li></ul>
+  </div></div><!-- //menu-side/1 -->
+
+				<div class="community_tab">
+					<div class="side_title">고객센터<span></span></div>
+					<div class="board cboth">
+						<ul module="Layout_BoardInfo"><!-- 슬라이드 게시판 자동출력 -->
+							<li><a href="{$board_list_url}">{$board_name}</a></li>
+							<li><a href="{$board_list_url}">{$board_name}</a></li>
+						</ul>
+					</div>
+				</div><!-- //community_tab -->
+			</div><!-- //tab_inner -->
+
+			<div module="Layout_multishopList">
+				<button type="button" class="toggle lang_title">LANGUGE : {$current_language}<span></span></button>
+				<ul module="Layout_multishopListitem">
+					<li class="{$selected_class}">
+						<a href="//{$shop_domain}/">{$locale_language}</a>
+					</li>
+					<li class="{$selected_class}">
+						<a href="//{$shop_domain}/">{$locale_language}</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- //nav_inner -->
+	</nav>
+</aside>
+<!--#ez="1/10"-->
