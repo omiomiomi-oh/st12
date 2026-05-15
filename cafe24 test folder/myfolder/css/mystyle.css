@@ -1,27 +1,29 @@
-/* 공통 */
-.flex{display: flex;}
-.grid{display: grid;}
-.block{display: block;}
-/* .float >.item{float: ffff;} */
-
-/* 단배너  css */
-/* 단배너 공통 */
-.dan1>.item{width: 100%;}
-.dan2>.item{width: 50%;}
-.dan3>.item{width: 33.33%;}
-.dan4>.item{width: 25%;}
-.dan-section{}
-.dan-section .dan-container{
-  gap: 20px;
-
+/* 테스트 후 삭제 */
+@import url(ub-variables.css);
+.card{
+  background-color: #cff;
+  box-sizing: border-box;
+  border: var(--border);
+  min-height: 300px;
+  opacity: 0.5;
+  
+}
+.dan-section .flex{
   background-color: #f00;
   box-sizing: border-box;
   border: 1px solid #000;
 }
+
+/* 공통 */
+
+/* .float >.item{float: ffff;} */
+
+/* 단배너  css */
+/* 단배너 공통 */
+.dan-section{}
 .dan-section .item{
-  flex: none;
-  opacity: 0.5;
-  border: 1px solid #00f;
+  /* flex: none; */
+  
 }
 .dan-section .item .thumb{}
 .dan-section .item .thumb img{}
